@@ -17,6 +17,12 @@
 	width: 120px;
 }
 
+#file-name-button-div {
+	display: table-cell;
+	padding-left: 8px;
+	width: 80px;
+}
+
 #log-view-grid {
 	width: 100%;
 	height: calc(100% - 30px);
