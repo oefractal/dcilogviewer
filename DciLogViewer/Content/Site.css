@@ -1,0 +1,25 @@
+﻿#file-name-input-and-label {
+	width: 100%;
+	display: table
+}
+
+#file-name-input-div {
+	display: table-cell;
+	width: auto
+}
+
+#file-name-input {
+	width: 100%
+}
+
+#file-name-label-div {
+	display: table-cell;
+	width: 120px;
+}
+
+#log-view-grid {
+	width: 100%;
+	height: calc(100% - 30px);
+	margin-top: 10px;
+	background-color: blue;
+}
