@@ -23,9 +23,8 @@
 	width: 80px;
 }
 
-#log-view-grid {
-	width: 100%;
-	height: calc(100% - 30px);
+#log-view-grid-container {
+	width: calc(100% - 300px);
+	height: calc(100% - 40px);
 	margin-top: 10px;
-	background-color: blue;
 }

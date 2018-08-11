@@ -16,8 +16,11 @@ namespace DciLogViewer
       bundles.Add(new StyleBundle("~/Content/css").Include(
         "~/Content/site.css"));
       bundles.Add(new StyleBundle("~/Content/jsgrid").Include(
-        "~/Content/jsgrid-min.css",
-        "~/Content/jsgrid-theme.css"));
+        "~/Content/jsgrid.min.css",
+        "~/Content/jsgrid-theme.min.css"));
+
+      bundles.Add(new ScriptBundle("~/bundles/index").Include(
+        "~/Scripts/index.js"));
     }
   }
 }

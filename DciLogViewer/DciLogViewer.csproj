@@ -125,6 +125,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\LogEntries.cs" />
+    <Compile Include="Models\LogEntry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -134,6 +136,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\index.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -154,7 +157,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

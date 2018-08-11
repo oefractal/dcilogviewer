@@ -5,6 +5,7 @@
   @Styles.Render("~/Content/css")
   @Scripts.Render("~/bundles/jsgrid")
   @Styles.Render("~/Content/jsgrid")
+  @Scripts.Render("~/bundles/index")
 </head>
   <body>
     <div id="file-name-input-and-label">
@@ -18,7 +19,9 @@
         <button id="select-file-button">Выбрать</button>
       </div>
     </div>
-    <div id="log-view-grid">
+    <div id="log-view-grid-container">
+      <div id="log-view-grid">
+      </div>
     </div>
   </body>
 </html>
