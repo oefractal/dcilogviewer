@@ -9,7 +9,7 @@
     autoload: true,
     paging: true,
     pageLoading: true,
-    pageSize: 15,
+    pageSize: 14,
     pageIndex: 1,
 
     controller: {
@@ -25,7 +25,7 @@
 
     fields: [
       { name: "Date", title: "Дата", type: "text", width: 90 },
-      { name: "Time", title: "Время", type: "text", width: 90 },
+      { name: "Time", title: "Время", type: "text", width: 100 },
       { name: "ProcessID", title: "ИД процесса", type: "number" },
       { name: "ThreadID", title: "ИД потока", type: "number" },
       { name: "Level", title: "Уровень", type: "text" },
