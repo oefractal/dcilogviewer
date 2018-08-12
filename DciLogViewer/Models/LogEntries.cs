@@ -5,7 +5,9 @@
   /// </summary>
   public class LogEntries
   {
-    public LogEntry[] data { get; set; }
-    public int itemsCount { get; set; }
+    public int records { get; set; }
+    public int page { get; set; }
+    public int total { get; set; }
+    public LogEntry[] rows { get; set; }
   }
 }

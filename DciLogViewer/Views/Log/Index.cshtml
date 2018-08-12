@@ -1,27 +1,33 @@
 ﻿<html>
 <head>
   <title>Просмотрщик лог-файлов</title>
-  @Scripts.Render("~/bundles/jquery")
-  @Styles.Render("~/Content/css")
-  @Scripts.Render("~/bundles/jsgrid")
-  @Styles.Render("~/Content/jsgrid")
-  @Scripts.Render("~/bundles/index")
+    @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jqgrid")
+    @Styles.Render("~/Content/bootstrap")
+    @Styles.Render("~/Content/jqueryui")
+    @Styles.Render("~/Content/jqgrid") 
+  <script>
+    $.jgrid.defaults.styleUI = 'Bootstrap';
+  </script>
+  @Scripts.Render("~/bundles/bootstrap")
 </head>
-  <body>
-    <div id="file-name-input-and-label">
-      <div id="file-name-label-div">
-        <span id="file-name-label">Имя файла:</span> 
-      </div>
-      <div id="file-name-input-div">
-        <input id="file-name-input" />
-      </div>
-      <div id="file-name-button-div">
-        <button id="select-file-button">Выбрать</button>
-      </div>
+<body>
+  <div id="file-name-input-and-label">
+    <div id="file-name-label-div">
+      <span id="file-name-label">Имя файла:</span>
     </div>
-    <div id="log-view-grid-container">
-      <div id="log-view-grid">
-      </div>
+    <div id="file-name-input-div">
+      <input id="file-name-input" />
     </div>
-  </body>
+    <div id="file-name-button-div">
+      <button id="select-file-button">Выбрать</button>
+    </div>
+  </div>
+  <div id="log-view-grid-container">
+    <table id="log-view-grid"></table>
+    <div id="log-view-grid-pager"></div>
+  </div>
+  @Scripts.Render("~/bundles/index")
+</body>
 </html>

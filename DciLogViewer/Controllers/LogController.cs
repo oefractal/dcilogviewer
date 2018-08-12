@@ -38,14 +38,15 @@ namespace DciLogViewer.Controllers
     /// <summary>
     /// Получить строки лог-файла.
     /// </summary>
-    /// <param name="pageIndex">Номер страницы.</param>
-    /// <param name="pageSize">Размер страницы.</param>
     /// <param name="fileName">Имя файла.</param>
     /// <returns></returns>
-    public ActionResult GetLogEntries(int pageIndex, int pageSize, string fileName)
+    public ActionResult GetLogEntries(string fileName)
     {
+      int pageIndex = int.Parse(this.Request.Params.Get("page"));
+      int pageSize = int.Parse(this.Request.Params.Get("rows"));
+
       if (!System.IO.File.Exists(fileName))
-        return new HttpNotFoundResult();
+          return new HttpNotFoundResult();
 
       var totalLineCount = 0;
       var logEntryList = new List<LogEntry>();
@@ -78,11 +79,13 @@ namespace DciLogViewer.Controllers
         }
       }
       var logEntries = new LogEntries();
-      logEntries.data = new LogEntry[logEntryList.Count];
+      logEntries.rows = new LogEntry[logEntryList.Count];
       int index = 0;
       foreach (var logEntry in logEntryList)
-        logEntries.data[index++] = logEntry;
-      logEntries.itemsCount = totalLineCount;
+        logEntries.rows[index++] = logEntry;
+      logEntries.page = pageIndex;
+      logEntries.records = totalLineCount;
+      logEntries.total = logEntryList.Count;
       return this.Json(logEntries, JsonRequestBehavior.AllowGet);
     }
   }
