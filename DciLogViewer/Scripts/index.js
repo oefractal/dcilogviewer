@@ -5,19 +5,18 @@
   $("#log-view-grid").jqGrid("setGridHeight", gridParentHeight - $("#log-view-grid-pager").height() - $("#file-name-input-and-label").height() - 50);
 }
 
-function getGridUrl() {
-  return '/Log/GetLogEntries?fileName=' + encodeURIComponent($("#file-name-input").val());
-}
-
 $(function () {
   $("#select-file-button").on("click", function () {
-    $("#log-view-grid").jqGrid('setGridParam', { url: getGridUrl(), datatype: 'json', mtype: 'POST' }).trigger('reloadGrid');
+    $("#log-view-grid").trigger('reloadGrid');
   });
 
   $("#log-view-grid").jqGrid({
-    url: getGridUrl(),
+    url: '/Log/GetLogEntries',
+    postData: {
+      fileName: function () { return $("#file-name-input").val();}
+    },
     mtype: "GET",
-    datatype: "jsonp",
+    datatype: "json",
     colModel: [
       { label: "Дата", name: "Date", width: 75 },
       { label: "Время", name: "Time", width: 150 },
