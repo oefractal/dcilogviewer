@@ -46,7 +46,7 @@ $(function () {
       { label: "Версия", name: "Version", width: 150 },
       { label: "Процесс", name: "Process", width: 150 }
     ],
-    rowNum: 28,
+    rowNum: 30,
     viewrecords: true,
     onSelectRow: handleRowSelected, 
     autowidth: true,
