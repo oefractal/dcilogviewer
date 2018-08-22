@@ -2,7 +2,15 @@
   var gridParentWidth = $("#log-view-grid-container").width();
   var gridParentHeight = $("#log-view-grid-container").height();
   $("#log-view-grid").jqGrid("setGridWidth", gridParentWidth);
-  $("#log-view-grid").jqGrid("setGridHeight", gridParentHeight - $("#log-view-grid-pager").height() - $("#file-name-input-and-label").height() - 50);
+  $("#log-view-grid").jqGrid("setGridHeight", gridParentHeight - $("#log-view-grid-pager").height() - $("#file-name-input-and-label").height() + 8);
+}
+
+function handleRowSelected() {
+  var grid = $("#log-view-grid");
+  var selRowId = grid.jqGrid("getGridParam", "selrow");
+  var cellValue = grid.jqGrid("getCell", selRowId, "Stack");
+  cellValue = cellValue.replace(/\sat\s/g, "\n at ");
+  $("#stack-input").val(cellValue);
 }
 
 $(function () {
@@ -40,6 +48,7 @@ $(function () {
     ],
     rowNum: 28,
     viewrecords: true,
+    onSelectRow: handleRowSelected, 
     autowidth: true,
     shrinkToFit: false,
     pager: "#log-view-grid-pager"

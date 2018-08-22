@@ -28,10 +28,31 @@
 
 #log-view-grid-container {
 	width: calc(100% - 500px);
-	height: calc(100% - 50px);
+	height: 100%;
 	margin-top: 10px;
 }
 
 #log-view-grid-pager {
   height: 50px;
+}
+
+#bottom-frame {
+  width: 100%;
+  height: calc(100% - 50px);
+  display: flex;
+}
+
+#stack-input-div {
+  width: 480px;
+  height: 100%;
+  margin-top: 8px;
+  margin-left: 16px;
+}
+
+#stack-input {
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+  overflow: auto;
+  resize: none;
 }
