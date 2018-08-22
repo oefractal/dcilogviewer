@@ -85,7 +85,7 @@ namespace DciLogViewer.Controllers
         logEntries.rows[index++] = logEntry;
       logEntries.page = pageIndex;
       logEntries.records = totalLineCount;
-      logEntries.total = logEntryList.Count;
+      logEntries.total = (int)Math.Ceiling((double)totalLineCount / pageSize);
       return this.Json(logEntries, JsonRequestBehavior.AllowGet);
     }
   }

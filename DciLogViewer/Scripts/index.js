@@ -6,6 +6,7 @@
 }
 
 $(function () {
+  $("#select-file-button").button();
   $("#select-file-button").on("click", function () {
     $("#log-view-grid").trigger('reloadGrid');
   });
@@ -24,11 +25,11 @@ $(function () {
       { label: "ИД потока", name: "ThreadID", width: 150 },
       { label: "Уровень", name: "Level", width: 150 },
       { label: "Операция", name: "Operation", width: 150 },
-      { label: "Сообщение", name: "Message", width: 150 },
-      { label: "Имя процесса", name: "ProcessName", width: 150 },
-      { label: "ИД процесса", name: "ProcessGlobalId", width: 150 },
-      { label: "Имя сообщения", name: "MessageName", width: 150 },
-      { label: "ИД сообщения", name: "MessageGlobalId", width: 150 },
+      { label: "Сообщение", name: "Message", width: 220 },
+      { label: "Имя процесса", name: "ProcessName", width: 300 },
+      { label: "ИД процесса", name: "ProcessGlobalId", width: 385 },
+      { label: "Имя сообщения", name: "MessageName", width: 220 },
+      { label: "ИД сообщения", name: "MessageGlobalId", width: 385 },
       { label: "Отправитель", name: "Sender", width: 150 },
       { label: "Получатель", name: "Receiver", width: 150 },
       { label: "Пользователь", name: "UserName", width: 150 },
@@ -37,13 +38,10 @@ $(function () {
       { label: "Версия", name: "Version", width: 150 },
       { label: "Процесс", name: "Process", width: 150 }
     ],
-    page: 1,
-    rowNum: 20,
-    scrollPopUp: true,
-    scrollLeftOffset: "83%",
+    rowNum: 28,
     viewrecords: true,
-    scroll: 1, 
-    emptyrecords: 'Прокрутите для загрузки следующей страницы', 
+    autowidth: true,
+    shrinkToFit: false,
     pager: "#log-view-grid-pager"
   });
   resizeGrid();
